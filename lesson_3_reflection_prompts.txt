@@ -1,0 +1,33 @@
+When would you want to use a remote repository rather than keeping all your work
+local?
+
+    When one does not want to lose all their work because of a hardware failure, it would make sense to have a remote repository. GitHub allows one to keep files online for both safekeeping and to share them with others. Perhaps most importantly, it allows for multiple team members to collaborate on the same project. A team member can create a new branch, make some changes, push them to GitHub, and then other team members can pull them down and view the changes to decide whether to merge them into the master branch. 
+
+Why might you want to always pull changes manually rather than having Git
+automatically stay up-to-date with your remote repository?
+
+    Pulling changes manually allows one to have control over what version of the files you have on your local computer. There might be changes made by another team member to one's remote repository that one does not necessarily need to see until one are ready to do so at a convenient time. If Git were to automatically stay up to date, that could get complex with too many files changing places and it would be difficult to track the status of a project. Having control over when to pull changes from the remote allows one to always be aware of the state of the project. 
+
+Describe the differences between forks, clones, and branches.  When would you
+use one instead of another?
+
+    A fork is a copy of someone else's repository on GitHub. It adds their repository to your repository with a link back to their repository, but of course it does not let you edit their repository. This is useful when you want to look at someone else's project and make your own changes but they do not necessarily want you to change their project. 
+
+    A clone is a copy of a repository on GitHub that you can edit the original version. It might be a repository that you created yourself, or that a team member created and you need to work on together. When you push changes to this repository, the changes will be visible to all the team members. Anyone listed as a colloborator will be able to clone and then modify the repository. This would be used when you want have a backup of a project online, if you are working on a project with multiple computers, or if you are colloborating on a project with others and all members need to have edit access to the repository. 
+
+    A branch is an version of a repository that can be used for trying out new features or creating new versions of a project that might not necessarily work out. It is a part of a repository with its own commit history. The master branch is the main version of the project and is generally kept in working order. Changes made on a branch can then be incorporated into the master branch using merge. Branches can then be pushed onto GitHub in order to keep the remote repository up to date with the local repository. This is useful when trying to develop a new feature, making a different version of a project, or when team members are working on a project and it would not make sense for everyone to be making changes to the master branch because that would be difficult to track and keeping in a working state. 
+
+What is the benefit of having a copy of the last known state of the remote
+stored locally?
+
+    The benefit is that it allows one to have a copy of the current version of the remote without necessarily incorporating the changes into their local repository. This could be useful if one is going offline but would still like to view the status of the project. It also means that one does not have to merge their local repository with the remote repository in order to view the remote repository. Using git fetch, one can update the local version of origin/master without merging the changes into the local master branch. One can then compare the origin/master with the local master or working branch before deciding whether to merge the two. 
+
+How would you collaborate without using Git or GitHub?  What would be easier,
+and what would be harder?
+
+	There are several options for collobaration without Git and GitHub. Your team could email files back and forth which might work for one or two files, but would get extremely out-of-sync quickly and would not do for a project of any substantial size. Another option would be to use a file sharing site such as Google Docs which might be acceptable for text documents, presentations, or other files (CAD models) that are not being edited by multiple people. Also, for some software, there are built in product data management systems that allow only one team member at a time to check out and work on a part. This means that there will be fewer opportunites for conflicts and it also tracks the history of the changes made to the parts with opportunities to revert to an earlier state. The relative advantages and disadvantages is mostly dependent on the type and size of project. For any development project with multiple team members working on the same set of files, Git and GitHub not is the most useful option, but is the only real choice as is demonstrated among actual development projects. There are other options for other types of team colloborations, but for programming, there are few justifications for using any other system for version control.
+
+When would you want to make changes in a separate branch rather than directly in
+master?  What benefits does each approach have?
+
+    It is best to work in a separate branch if you are collaborating with a team and multiple team members may be working on the same file. In that case, in order to avoid version conflicts, it is necessary to have each member working on a different branch and then merge the two using pull requests to view the differences between files. If you are working on an individual project, braches could be useful for developing features or separate versions of a project. In both cases, individually and on a team, it would be best to always have a working version of the project and that could be the master branch. Once a change is known to work, it can then be merged into master so the project always remains in working order. Working on different branches allows individuals to be more experimental and it allows teams to effectively manage large projects without running into file conflicts. Committing changes directly to master can be quicker for small fixes. Having a different branch could be considered safer although the master branch could be reverted to a previous commit state as well. 
